@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
  */
-router.use("/test1", require("./test1"));
-router.use("/test2", require("./test2"));
+console.log('trace: index.js');
+router.use("/api", require("./api"));
 
 module.exports = router;
