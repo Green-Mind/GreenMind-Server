@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-//router.use('path', ...);
-
+console.log('trace: /api/test/test2.js');
 var http = require('http');
 var bodyParser= require('body-parser');
 var app = express();
@@ -58,15 +57,16 @@ app.use(function(req, res, next) {
         else
             figure2[3] += tmp[1];    
     }
-    //var paramPassword = req.body.password;
+
     console.log('internal_2 : '+figure2[0]+'  social_2 : '+figure2[1]+'  external_2 : '+figure2[2]+'  sensation_2 : '+figure2[3]);
 
-    res.send(figure2);
+    res.send(figure2[0]);
 
 });
 
+/*
 var server = http.createServer(app).listen(app.get('port'),function(){
    console.log("익스프레스로 웹 서버를 실행함 : "+ app.get('port')); 
 });
-
+*/
 module.exports = router;
